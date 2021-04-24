@@ -1,59 +1,29 @@
 import React from 'react';
-import { Text, Image, ScrollView } from 'react-native';
+import { Text, View, SectionList } from 'react-native';
 
-export default function MyScrollViewAppr() {
+export default function StatesApp() {
+ return (
+   <View style={{flex: 1, paddingTop: 22}}>
+     <SectionList
+        sections={[
+          {title: 'A', data: ['Alabama', 'Alaska', 'Arizona', 'Arkansas']},
+          {title: 'C', data: ['California', 'Colorado', 'Connecticut']},
+          {title: 'D', data: ['Delaware']},
+          {title: 'F', data: ['Florida']}
+        ]}
+      
+        renderItem={({item}) => <Text style={{padding: 10, fontSize: 20, height: 40}}> {item} </Text>}
+        renderSectionHeader={({section}) => <Text style={{paddingTop: 10, 
+          paddingLeft: 10, 
+          paddingRight: 10, 
+          paddingBottom: 10, 
+          fontSize: 14,
+          fontWeight: 'bold',
+          backgroundColor: '#9FA8DA'}}>{section.title}</Text>}
+          keyExtractor={(item, index) => index}
+        
+        />
+   </View>
 
-  const dog = {
-    uri: 'https://wonderfulengineering.com/wp-content/uploads/2014/01/highway-wallpapers-15.jpg',
-    width: 64,
-    height: 64
-  }
-
-  return (
-    <ScrollView style={{padding: 40}}>
-      <Text style={{fontSize: 80}}> Try to scroll down! </Text>
-      <Image source={require('./assets/highway-wallpapers-15.jpg')} style={{width: 64, height: 64}} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Text style={{fontSize: 80}}> Try to scroll down! </Text>
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Text style={{fontSize: 80}}> Try to scroll down! </Text>
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Text style={{fontSize: 80}}> Try to scroll down! </Text>
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Text style={{fontSize: 80}}> Try to scroll down! </Text>
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Text style={{fontSize: 80}}> Try to scroll down! </Text>
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-    </ScrollView>
-
-  );
+ );
 }
